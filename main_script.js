@@ -125,6 +125,7 @@ function edit(event)
 
 function remove(event)
 {
+    if(!confirm('Are you sure you want to delete this book?')) return;
     event.preventDefault();
     let element = Books.find((item)=> item.id == event.target.id);
     let index =  Books.indexOf(element);
