@@ -1,4 +1,4 @@
-import {closeWindow,openWindow,$table,getData,setData,Visitor,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue, Card} from "../common.js";
+import {closeWindow,openWindow,$table,getData,setData,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue, Card} from "../common.js";
 
 let Cards = getData("cards");
 let Visitors = getData("visitors");
@@ -128,7 +128,7 @@ function returnBook(event)
     setData("books",Books);
 }
 
-function newCard(obj)
+function newCard()
 {
     setBooksCB();
     openWindow('New Card');

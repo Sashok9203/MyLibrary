@@ -81,7 +81,6 @@ th,td {
     border-color: transparent transparent green rgb(217, 217, 217);
 }
 
-
 #title,
 form{
     justify-content: space-between;
@@ -106,7 +105,6 @@ button,
 th,td{
     border-width: 1px;
 }
-
 
 button{
     border-radius: 3px;

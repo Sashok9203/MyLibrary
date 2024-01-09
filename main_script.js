@@ -114,7 +114,6 @@ function setDataToTable(filter,sort)
         remove(event);
         setDataToTable();
     });
-    
 }
 
 function edit(event)
@@ -149,7 +148,6 @@ function editWindow(obj)
        winName ='New book';
     }
     openWindow(winName);
-
 }
 
 function setWindowData(obj)

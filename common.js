@@ -76,9 +76,6 @@ class Card{
     }
 }
 
-class Page{
-
-}
 
 function initData()
 {
