@@ -1,6 +1,7 @@
 import {closeWindow,openWindow,$table,getData,setData,Book,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue} from "../common.js";
 
 let Books = getData("books");
+let Cards = getData("cards");
 let editableBook = null;
 $('.edit-window button').click(saveBook);
 
@@ -124,9 +125,16 @@ function edit(event)
 
 function remove(event)
 {
-    if(!confirm('Are you sure you want to delete this book?')) return;
+    let element = Cards.some((item)=>item.bookId == event.target.id);
+    if(!confirm(`Are you sure you want to delete this book?\n${element?'This book has an entry in the visitors cards ! ! !':''}`)) return;
     event.preventDefault();
-    let element = Books.find((item)=> item.id == event.target.id);
+    if(element)
+    {
+       Cards.filter((item)=>item.bookId == event.target.id)
+            .forEach((item)=>{Cards.splice(Cards.indexOf(item),1)});
+       setData('cards',Cards);
+    }
+    element = Books.find((item)=> item.id == event.target.id);
     let index =  Books.indexOf(element);
     Books.splice(index,1);
     setData('books',Books);
