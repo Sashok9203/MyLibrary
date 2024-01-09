@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link href="../main_style.css" rel="stylesheet">
+    <script type="module" src="../common.js"></script>
+    <title> My Library</title>
+</head>
+<body>
+    <header>
+        <label>Library</label>
+        <nav id = "menu">
+            <a href = "../index.html" class = "menu-item">Books</a>
+            <a href = "Visitors/visitors.html" class = "menu-item selected-item">Visitors</a>
+            <a href = "../Cards/cards.html" class = "menu-item">Cards</a>
+            <a href = "../Statistics/statistics.html" class = "menu-item">Statistics</a>
+        </nav>
+    </header>
+    <section id ="content">
+        <section id = "title">
+            <span>all visitors:</span>
+            <button type="button">New visitor</button>
+        </section>
+        <hr>
+        <form>
+            <div id = "sort">
+                <span>Sort by:</span>
+                <select id = "sort-combobox">
+                    <option value="id" selected>ID</option>
+                    <option value="name">Name</option>
+                    <option value="telephone">Telephone</option>
+                 </select>
+                <button type="button">Sort</button>
+            </div>
+            <div id = "search">
+               <span>Search:</span>
+               <input type="text">
+               <button type="button" >Search</button>
+            </div>
+        </form>
+   
+        <table>
+            <thead>
+                <tr>
+                   <th>ID</th>
+                   <th>Name</th>
+                   <th>Telephone</th>
+                   <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+       
+       </table>
+    </section>
+    <form class = "edit-window">
+        <label id = "window-name">Name</label>
+        <div id = "name" class = "edit-element">
+            <label>Name:</label>
+            <input type="text">
+        </div>
+        <div id = "telephone" class = "edit-element">
+            <label>Telephone:</label>
+            <input type="text">
+        </div>
+        
+        <button type="button">Save</button>
+        <img src="../Images/w_close.png">
+            
+    </form>
+    <script type="module" src="../Visitors/visitors_script.js"></script>
+</body>
+</html>
