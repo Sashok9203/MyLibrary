@@ -84,11 +84,11 @@ function initData()
     //storage.clear();  
     if(storage.getItem("books") === null)
     {
-        array = [new Book(getId("book_id"),"Flexbox in CSS","Estelle Weyl",2017,"O’Reilly Media,",150,3),
+        array = [new Book(getId("book_id"),"Flexbox in CSS","Estelle Weyl",2017,"O’Reilly Media",150,3),
         new Book(getId("book_id"),"The Joy of JavaScript","Luis Atencio",2021,"Manning Publications",122,4),
-        new Book(getId("book_id"),"Windows Internals Part 2","Andrea Allievi",2021,"Pearson Education,",921,3),
+        new Book(getId("book_id"),"Windows Internals Part 2","Andrea Allievi",2021,"Pearson Education",921,3),
         new Book(getId("book_id"),"Microsoft .NET Framework 3.5, ADO.NET Application Development","Jim Wightman",2022,"Microsoft Press",526,4),
-        new Book(getId("book_id"),"SQL in a Nutshell: A Desktop Quick Reference","Kevin Kline",2022,"O’Reilly Media.",360,5),
+        new Book(getId("book_id"),"SQL in a Nutshell: A Desktop Quick Reference","Kevin Kline",2022,"O’Reilly Media",360,5),
         new Book(getId("book_id"),"Code like a Pro in C#","Jort Rodenburg",2021,"Manning Publications",418,5),
         new Book(getId("book_id"),"C# in Depth 4th Edition by Jon Skeet","Jon Skeet",2019,"Manning Publications",528,5),
         new Book(getId("book_id"),"C++ Primer Plus","Stephen Prata",2012,"Pearson Education",1429,5),];
