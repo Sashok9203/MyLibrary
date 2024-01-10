@@ -20,7 +20,6 @@ $search_button.click(()=>{
     setDataToTable($searchValue.val());
 });
 
-
 function saveVisitor()
 {
     if(!checkUserInput())
@@ -81,7 +80,7 @@ function setDataToTable(filter,sort)
         }
         tempVisitorsArray.sort((a,b)=>{
             if(moreCondition(a,b)) return 1;
-            if (lessCondition(a,b)) return -1;
+            if(lessCondition(a,b)) return -1;
          return 0;
         });
      }

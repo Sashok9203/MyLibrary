@@ -4,7 +4,7 @@ body,
 table,
 .owerlay,
 .edit-window button,
-.edit-element input{
+.edit-element {
      width: 100%;
 }
 
@@ -23,6 +23,11 @@ body{
 a{
     text-decoration: none;
 }
+
+.edit-window button{
+    padding: 3px 0;
+}
+
 
 header,
 header #menu,
@@ -144,7 +149,7 @@ h3{
 }
 
 #sort select,
-form input{
+#search input{
     width: 100px;
 }
 
@@ -166,7 +171,7 @@ select{
     outline: none;
 }
 
-form button{
+#sort-search button{
     padding: 3px 0 3px 0 ;
     width: 60px;
 }
