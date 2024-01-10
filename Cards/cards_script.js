@@ -47,8 +47,8 @@ function saveCard()
     let selectedBook = Books.find((item)=>item.id == $bookCB.val());
     Cards.push(new Card(
         getId('card_id'),
-        $visitorCB.val(),
-        selectedBook.id)
+        Number($visitorCB.val()),
+        Number(selectedBook.id))
       );
     selectedBook.booksCount--;
     setDataToTable();

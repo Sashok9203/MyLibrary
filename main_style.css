@@ -33,7 +33,9 @@ form,
 
 header,
 .edit-element,
-.edit-window{
+.edit-window,
+#top-books,
+#top-visitors{
     flex-direction: column;
 }
 
@@ -60,7 +62,9 @@ header #menu{
 }
 
 .menu-item,
-th,td {
+th,td,
+#top-books,
+#top-visitors {
     text-align: center;
 }
 

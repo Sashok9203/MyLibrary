@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link href="../main_style.css" rel="stylesheet">
-    <script type="module" src="../common.js"></script>
     <title> My Library</title>
 </head>
 <body>
@@ -14,8 +13,8 @@
         <nav id = "menu">
             <a href = "../index.html" class = "menu-item">Books</a>
             <a href = "../Visitors/visitors.html" class = "menu-item">Visitors</a>
-            <a href = "../Cards/cards.html" class = "menu-item selected-item">Cards</a>
-            <a href = "../Statistics/statistics.html" class = "menu-item">Statistics</a>
+            <a href = "../Cards/cards.html" class = "menu-item">Cards</a>
+            <a href = "../Statistics/statistics.html" class = "menu-item selected-item">Statistics</a>
         </nav>
     </header>
     <section id ="content">
@@ -26,12 +25,31 @@
         <section id = "statistics">
              <div id="top-books">
                  <h3>Top 5 Books</h3>
+                 <table>
+                    <thead>
+                        <tr>
+                            <th>Plaсe</th>
+                            <th>Book name</th>
+                            <th>Read</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                 </table>
              </div>
              <div id="top-visitors">
                 <h3>Top 5 Visitors</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plaсe</th>
+                            <th>Visitor name</th>
+                            <th>Read books</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
              </div>
         </section>
-       
     <script type="module" src="../Statistics/statistics_script.js"></script>
 </body>
 </html>

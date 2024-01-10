@@ -66,7 +66,7 @@ class Visitor{
 
 class Card{
    
-    constructor(id,visitorId,bookId,visitorName,bookName)
+    constructor(id,visitorId,bookId)
     {
        this.id = id;
        this.visitorId = visitorId;
@@ -102,7 +102,7 @@ function initData()
     }
     if(storage.getItem("cards") === null)
     {
-        array = [new Card(getId("card_id"),1,1,"Saray1 P.H","Book1"),
+        array = [{id:getId("card_id"),visitorId:1,bookId:1,borrow_date:"2023-02-12"},
         new Card(getId("card_id"),2,2,"Saray2 P.H","Book2"),
         new Card(getId("card_id"),2,3,"Saray2 P.H","Book3"),
         new Card(getId("card_id"),4,4,"Saray4 P.H","Book4"),
