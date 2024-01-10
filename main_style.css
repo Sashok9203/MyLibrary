@@ -24,7 +24,10 @@ header,
 header #menu,
 #title,
 form,
-.edit-element{
+.edit-element,
+#statistics,
+#top-books,
+#top-visitors{
     display:flex;
 }
 
@@ -86,8 +89,12 @@ form{
     justify-content: space-between;
 }
 
-#title{
-   
+#statistics{
+    justify-content:space-around;
+}
+
+#title
+{
     align-items: center;
     margin-bottom: 20px;
 }
@@ -117,7 +124,8 @@ button{
 }
 
 #title span,
-header > span{
+header > span,
+h3{
     color: green;
 }
 
@@ -226,3 +234,4 @@ input::placeholder {
     background-color: black;
     opacity: 0.8;
 }
+
