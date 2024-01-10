@@ -1,4 +1,4 @@
-My Library
+Book Library
 
 ![Screenshot_1](https://github.com/Sashok9203/MyLibrary/assets/56803757/659a4438-f6da-49cf-a98b-dae375643e98)
 
