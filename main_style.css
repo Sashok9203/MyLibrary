@@ -35,18 +35,18 @@ header,
 }
 
 #title span,
-header > label{
+header > span{
     text-transform: uppercase;
 }
 
-header > label,
+header > span,
 #title span,
 #window-name,
 .edit-element label{
     font-weight: bolder;
 }
 
-header > label,
+header > span,
 #content{
     margin: 20px;
 }
@@ -117,7 +117,7 @@ button{
 }
 
 #title span,
-header > label{
+header > span{
     color: green;
 }
 
@@ -139,9 +139,8 @@ form span,
     font-size: 12px;
 }
 
-form input,
-#sort select,
-iframe{
+input,
+select{
     outline: none;
 }
 

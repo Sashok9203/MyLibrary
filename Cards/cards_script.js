@@ -20,7 +20,6 @@ $search_button.click(()=>{
     setDataToTable($searchValue.val());
 });
 
-
 function setVisitorsCB()
 {
     Visitors.forEach((item)=>{
@@ -37,7 +36,6 @@ function setBooksCB()
    });
    
 }
-
 
 function saveCard()
 {
@@ -101,7 +99,6 @@ function setDataToTable(filter,sort)
                 moreCondition = (a,b) =>(!a.return_date && b.return_date) || (a.return_date > b.return_date);
                 break;
         }
-        console.info(lessCondition);
         tempCardsArray.sort((a,b)=>{
             if(moreCondition(a,b)) return 1;
             if (lessCondition(a,b)) return -1;
