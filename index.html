@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,27 @@
     <link href="main_style.css" rel="stylesheet">
     <title> My Library</title>
 </head>
+
 <body>
     <header>
         <span>Library</span>
-        <nav id = "menu">
-            <a href = "index.html" class = "menu-item selected-item">Books</a>
-            <a href = "Visitors/visitors.html" class = "menu-item">Visitors</a>
-            <a href = "Cards/cards.html" class = "menu-item">Cards</a>
-            <a href = "Statistics/statistics.html" class = "menu-item">Statistics</a>
+        <nav id="menu">
+            <a href="index.html" class="menu-item selected-item">Books</a>
+            <a href="Visitors/visitors.html" class="menu-item">Visitors</a>
+            <a href="Cards/cards.html" class="menu-item">Cards</a>
+            <a href="Statistics/statistics.html" class="menu-item">Statistics</a>
         </nav>
     </header>
-    <section id ="content">
-        <section id = "title">
+    <section id="content">
+        <section id="title">
             <span>all books:</span>
             <button type="button">New book</button>
         </section>
         <hr>
         <form>
-            <div id = "sort">
+            <div id="sort">
                 <span>Sort by:</span>
-                <select id = "sort-combobox">
+                <select id="sort-combobox">
                     <option value="id" selected>ID</option>
                     <option value="name">Name</option>
                     <option value="author">Author</option>
@@ -37,59 +39,62 @@
                 </select>
                 <button type="button">Sort</button>
             </div>
-            <div id = "search">
-               <span>Search:</span>
-               <input type="text">
-               <button type="button" >Search</button>
+            <div id="search">
+                <span>Search:</span>
+                <input type="text">
+                <button type="button">Search</button>
             </div>
         </form>
-        <table>
-            <thead>
-                <tr>
-                   <th>ID</th>
-                   <th>Name</th>
-                   <th>Author</th>
-                   <th>Year</th>
-                   <th>Publishing</th>
-                   <th>Pages</th>
-                   <th>Count</th>
-                   <th>Edit</th>
-                   <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="table-conteiner">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Year</th>
+                        <th>Publishing</th>
+                        <th>Pages</th>
+                        <th>Count</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </section>
-    <section class ="owerlay"></section>
-    <form class = "edit-window">
-        <span id = "window-name">Name</span>
-        <div class = "edit-element">
+    <section class="owerlay"></section>
+    <form class="edit-window">
+        <span id="window-name">Name</span>
+        <div class="edit-element">
             <label for="name">Name:</label>
-            <input id = "name" type="text">
+            <input id="name" type="text">
         </div>
-        <div class = "edit-element">
+        <div class="edit-element">
             <label for="author">Author:</label>
-            <input id = "author" type="text">
+            <input id="author" type="text">
         </div>
-        <div  class = "edit-element">
+        <div class="edit-element">
             <label for="year">Year:</label>
-            <input id = "year" type="number">
+            <input id="year" type="number">
         </div>
-        <div  class = "edit-element">
+        <div class="edit-element">
             <label for="publishing">Publishing:</label>
-            <input id = "publishing" type="text">
+            <input id="publishing" type="text">
         </div>
-        <div  class = "edit-element">
+        <div class="edit-element">
             <label for="pages">Pages:</label>
-            <input id = "pages" type="number">
+            <input id="pages" type="number">
         </div>
-        <div class = "edit-element">
+        <div class="edit-element">
             <label for="count">Count:</label>
-            <input id = "count" type="number">
+            <input id="count" type="number">
         </div>
         <button type="button">Save</button>
         <img src="../Images/w_close.png">
     </form>
     <script type="module" src="main_script.js"></script>
 </body>
+
 </html>

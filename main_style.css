@@ -165,6 +165,15 @@ table{
     border-collapse: collapse;
 }
 
+#content{
+    height:calc(100% - 7.5em);
+} 
+
+.table-conteiner{
+    height: inherit;
+    overflow: auto;
+}
+
 th,td{
     border-style: solid;
     font-size: 13px;

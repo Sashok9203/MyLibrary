@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,71 @@
     <link href="../main_style.css" rel="stylesheet">
     <title> My Library</title>
 </head>
+
 <body>
     <header>
         <span>Library</span>
-        <nav id = "menu">
-            <a href = "../index.html" class = "menu-item">Books</a>
-            <a href = "../Visitors/visitors.html" class = "menu-item">Visitors</a>
-            <a href = "../Cards/cards.html" class = "menu-item selected-item">Cards</a>
-            <a href = "../Statistics/statistics.html" class = "menu-item">Statistics</a>
+        <nav id="menu">
+            <a href="../index.html" class="menu-item">Books</a>
+            <a href="../Visitors/visitors.html" class="menu-item">Visitors</a>
+            <a href="../Cards/cards.html" class="menu-item selected-item">Cards</a>
+            <a href="../Statistics/statistics.html" class="menu-item">Statistics</a>
         </nav>
     </header>
-    <section id ="content">
-        <section id = "title">
+    <section id="content">
+        <section id="title">
             <span>all cards:</span>
             <button type="button">New card</button>
         </section>
         <hr>
         <form>
-            <div id = "sort">
+            <div id="sort">
                 <span>Sort by:</span>
-                <select id = "sort-combobox">
+                <select id="sort-combobox">
                     <option value="id" selected>ID</option>
                     <option value="book">Book</option>
                     <option value="visitor">Visitor</option>
                     <option value="borrow_date">Borrow Date</option>
                     <option value="return_date">Return Date</option>
-                 </select>
+                </select>
                 <button type="button">Sort</button>
             </div>
-            <div id = "search">
-               <span>Search:</span>
-               <input type="text">
-               <button type="button">Search</button>
+            <div id="search">
+                <span>Search:</span>
+                <input type="text">
+                <button type="button">Search</button>
             </div>
         </form>
-        <table>
-            <thead>
-                <tr>
-                   <th>ID</th>
-                   <th>Book</th>
-                   <th>Visitor</th>
-                   <th>Borrow Date</th>
-                   <th>Return Date</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
-    <section class ="owerlay"></section>
-    <form class = "edit-window">
-        <span id = "window-name">Name</span>
-        <div class = "edit-element">
-            <label for="books-combobox">Book:</label>
-            <select id = "books-combobox"></select>
+        <div class="table-conteiner">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Book</th>
+                        <th>Visitor</th>
+                        <th>Borrow Date</th>
+                        <th>Return Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
-        <div class = "edit-element">
+    </section>
+    <section class="owerlay"></section>
+    <form class="edit-window">
+        <span id="window-name">Name</span>
+        <div class="edit-element">
+            <label for="books-combobox">Book:</label>
+            <select id="books-combobox"></select>
+        </div>
+        <div class="edit-element">
             <label for="visitors-combobox">Visitor:</label>
-            <select id = "visitors-combobox"></select>
+            <select id="visitors-combobox"></select>
         </div>
         <button type="button">Save</button>
         <img src="../Images/w_close.png">
     </form>
     <script type="module" src="../Cards/cards_script.js"></script>
 </body>
+
 </html>

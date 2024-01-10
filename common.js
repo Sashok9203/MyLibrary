@@ -84,29 +84,38 @@ function initData()
     //storage.clear();  
     if(storage.getItem("books") === null)
     {
-        array = [new Book(getId("book_id"),"Book1","Author1",1990,"Publishing1",120,2),
-        new Book(getId("book_id"),"Book2","Author2",1992,"Publishing2",122,22),
-        new Book(getId("book_id"),"Book3","Author3",1993,"Publishing3",130,3),
-        new Book(getId("book_id"),"Book4","Author4",1994,"Publishing4",140,4),
-        new Book(getId("book_id"),"Book5","Author5",2000,"Publishing5",150,5)];
+        array = [new Book(getId("book_id"),"Flexbox in CSS","Estelle Weyl",2017,"O’Reilly Media,",150,3),
+        new Book(getId("book_id"),"The Joy of JavaScript","Luis Atencio",2021,"Manning Publications",122,4),
+        new Book(getId("book_id"),"Windows Internals Part 2","Andrea Allievi",2021,"Pearson Education,",921,3),
+        new Book(getId("book_id"),"Microsoft .NET Framework 3.5, ADO.NET Application Development","Jim Wightman",2022,"Microsoft Press",526,4),
+        new Book(getId("book_id"),"SQL in a Nutshell: A Desktop Quick Reference","Kevin Kline",2022,"O’Reilly Media.",360,5),
+        new Book(getId("book_id"),"Code like a Pro in C#","Jort Rodenburg",2021,"Manning Publications",418,5),
+        new Book(getId("book_id"),"C# in Depth 4th Edition by Jon Skeet","Jon Skeet",2019,"Manning Publications",528,5),
+        new Book(getId("book_id"),"C++ Primer Plus","Stephen Prata",2012,"Pearson Education",1429,5),];
         storage.setItem("books",JSON.stringify(array));
     }
     if(storage.getItem("visitors") === null)
     {
-        array = [new Visitor(getId("visitor_id"),"Saray P.H","098-876-76-56"),
-        new Visitor(getId("visitor_id"),"Saray2 P.H","098-276-26-26"),
-        new Visitor(getId("visitor_id"),"Saray3 P.H","098-836-36-36"),
-        new Visitor(getId("visitor_id"),"Saray4 P.H","098-846-46-46"),
-        new Visitor(getId("visitor_id") ,"Saray5 P.H","098-856-56-56")];
+        array = [new Visitor(getId("visitor_id"),"Sinclair Fonzo","068-876-76-56"),
+        new Visitor(getId("visitor_id"),"Fayette McIlwraith","055-276-26-26"),
+        new Visitor(getId("visitor_id"),"Padgett Pretty","097-346-36-36"),
+        new Visitor(getId("visitor_id"),"Fanechka Werndly","099-812-46-46"),
+        new Visitor(getId("visitor_id") ,"Carmen Piatkow","093-456-56-56"),
+        new Visitor(getId("visitor_id"),"Rachael Keyzman","067-746-46-46"),
+        new Visitor(getId("visitor_id"),"Camella Elliott","099-816-46-46"),
+        new Visitor(getId("visitor_id"),"Ezri Phipard-Shears","093-046-46-46")];
         storage.setItem("visitors", JSON.stringify(array));
     }
     if(storage.getItem("cards") === null)
     {
-        array = [{id:getId("card_id"),visitorId:1,bookId:1,borrow_date:"2023-02-12"},
-        new Card(getId("card_id"),2,2,"Saray2 P.H","Book2"),
-        new Card(getId("card_id"),2,3,"Saray2 P.H","Book3"),
-        new Card(getId("card_id"),4,4,"Saray4 P.H","Book4"),
-        new Card(getId("card_id"),1,4,"Saray1 P.H","Book4")];
+        array = [{id:getId("card_id"),visitorId:1,bookId:1,borrow_date:"2023-02-12",return_date:"2023-02-25"},
+        {id:getId("card_id"),visitorId:1,bookId:8,borrow_date:"2023-01-02"},
+        {id:getId("card_id"),visitorId:1,bookId:2,borrow_date:"2023-08-10",return_date:"2023-10-25"},
+        {id:getId("card_id"),visitorId:2,bookId:6,borrow_date:"2023-09-22",return_date:"2023-10-20"},
+        {id:getId("card_id"),visitorId:3,bookId:3,borrow_date:"2023-03-23"},
+        {id:getId("card_id"),visitorId:2,bookId:3,borrow_date:"2023-11-12",return_date:"2023-12-01"},
+        {id:getId("card_id"),visitorId:5,bookId:2,borrow_date:"2023-03-07"},
+        {id:getId("card_id"),visitorId:8,bookId:5,borrow_date:"2023-08-12"}];
         storage.setItem("cards", JSON.stringify(array));
     }
 }
