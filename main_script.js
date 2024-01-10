@@ -3,6 +3,12 @@ import {closeWindow,openWindow,$table,getData,setData,Book,getId,$sortValue,$new
 let Books = getData("books");
 let Cards = getData("cards");
 let editableBook = null;
+let $nameInput = $('#name');
+let $authorInput = $('#author');
+let $yearInput = $('#year');
+let $publishingInput = $('#publishing');
+let $pagesInput = $('#pages');
+let $countInput = $('#count');
 $('.edit-window button').click(saveBook);
 
 $sort_button.click(()=>{
@@ -20,29 +26,47 @@ $search_button.click(()=>{
 
 function saveBook()
 {
+    if(!checkUserInput())
+    {
+        alert('The input fields are not filled correctly...');
+        return;
+    }
     if(editableBook)
     {
-        editableBook.name = $('#name input').val();
-        editableBook.author = $('#author input').val();
-        editableBook.year = $('#year input').val();
-        editableBook.publishing = $('#publishing input').val();
-        editableBook.pagesCount = $('#pages input').val();
-        editableBook.booksCount = $('#count input').val();
+        editableBook.name = $nameInput.val();
+        editableBook.author = $authorInput.val();
+        editableBook.year = $yearInput.val();
+        editableBook.publishing = $publishingInput.val();
+        editableBook.pagesCount = $pagesInput.val();
+        editableBook.booksCount = $countInput.val();
     }
     else{
       Books.push(new Book(
         getId('book_id'),
-        $('#name input').val(),
-        $('#author input').val(),
-        $('#year input').val(),
-        $('#publishing input').val(),
-        $('#pages input').val(),
-        $('#count input').val())
+        $nameInput.val(),
+        $authorInput.val(),
+        $yearInput.val(),
+        $publishingInput.val(),
+        $pagesInput.val(),
+        $countInput.val())
       );
     }
     setDataToTable();
     setData("books",Books);
     closeWindow();
+}
+
+function checkUserInput()
+{
+   return($nameInput.val() 
+          && $authorInput.val() 
+          && $yearInput.val() 
+          && $yearInput.val() > 1750
+          && $publishingInput.val()
+          && $pagesInput.val()
+          && $pagesInput.val() > 0
+          && $countInput.val()
+          && $countInput.val() > 0)
 }
 
 function setDataToTable(filter,sort)
@@ -161,12 +185,12 @@ function editWindow(obj)
 function setWindowData(obj)
 {
     editableBook = obj;
-    $('#name input').val(obj.name);
-    $('#author input').val(obj.author);
-    $('#year input').val(obj.year);
-    $('#publishing input').val(obj.publishing);
-    $('#pages input').val(obj.pagesCount);
-    $('#count input').val(obj.booksCount);
+    $nameInput.val(obj.name);
+    $authorInput.val(obj.author);
+    $yearInput.val(obj.year);
+    $publishingInput.val(obj.publishing);
+    $pagesInput.val(obj.pagesCount);
+    $countInput.val(obj.booksCount);
 }
 
 setDataToTable();

@@ -41,7 +41,11 @@ function setBooksCB()
 
 function saveCard()
 {
-   
+    if(!checkUserInput())
+    {
+        alert('The input fields are not filled correctly...');
+        return;
+    }
     let selectedBook = Books.find((item)=>item.id == $bookCB.val());
     Cards.push(new Card(
         getId('card_id'),
@@ -53,6 +57,10 @@ function saveCard()
     setData("cards",Cards);
     setData("books",Books);
     closeWindow();
+}
+
+function checkUserInput(){
+   return($bookCB.val() && $visitorCB.val())
 }
 
 function setDataToTable(filter,sort)
@@ -119,6 +127,7 @@ function setDataToTable(filter,sort)
 
 function returnBook(event)
 {
+    if(!confirm(`Are you sure ?`)) return;
     let element = Cards.find((item)=> item.id == event.target.id);
     let returnedBook = Books.find((item)=> item.id == element.bookId);
     returnedBook.booksCount++;

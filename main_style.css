@@ -201,6 +201,11 @@ input{
     outline: 0;
 }
 
+input::placeholder {
+    opacity: 0.5;
+    font-size: 9px;
+  }
+
 #window-name{
     font-size: 14px;
 }

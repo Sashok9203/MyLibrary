@@ -2,6 +2,10 @@ import {closeWindow,openWindow,$table,getData,setData,Visitor,getId,$sortValue,$
 
 let Visitors = getData("visitors");
 let editableVisitor = null;
+let $nameInput = $('#name');
+let $phoneInput = $('#telephone');
+$phoneInput.attr('placeholder','(XXX-XXX-XX-XX) (XXX-XXX-XXXX) (XXX XXX XX XX) (XXX XXX XXXX)');
+
 $('.edit-window button').click(saveVisitor);
 
 $sort_button.click(()=>{
@@ -19,21 +23,34 @@ $search_button.click(()=>{
 
 function saveVisitor()
 {
+    if(!checkUserInput())
+    {
+        alert('The input fields are not filled correctly...');
+        return;
+    }
     if(editableVisitor)
     {
-        editableVisitor.name = $('#name input').val();
-        editableVisitor.telephone = $('#telephone input').val();
+        editableVisitor.name = $nameInput.val();
+        editableVisitor.telephone = $phoneInput.val();
     }
     else{
       Visitors.push(new Visitor(
         getId('visitor_id'),
-        $('#name input').val(),
-        $('#telephone input').val())
+        $nameInput.val(),
+        $phoneInput.val())
       );
     }
     setDataToTable();
     setData("visitors",Visitors);
     closeWindow();
+}
+
+function checkUserInput()
+{
+   return($nameInput.val() 
+          && $phoneInput.val()
+          && $phoneInput.val().length <= 13
+          && $phoneInput.val().match(/^[0-9]{3}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{2,4}[-\s]{0,1}[0-9]{2,4}$/im))
 }
 
 function setDataToTable(filter,sort)
@@ -108,8 +125,8 @@ function editWindow(obj)
 function setWindowData(obj)
 {
     editableVisitor = obj;
-    $('#name input').val(obj.name);
-    $('#telephone input').val(obj.telephone);
+    $nameInput.val(obj.name);
+    $phoneInput.val(obj.telephone);
 }
 
 setDataToTable();
