@@ -20,6 +20,10 @@ body{
     background-color: rgb(217, 217, 217);
 }
 
+a{
+    text-decoration: none;
+}
+
 header,
 header #menu,
 #title,
@@ -110,6 +114,12 @@ button,
 
 #search{
     margin-bottom: 20px;
+}
+
+.id_c,
+.edit_c,
+.remove_c{
+    width: 40px;
 }
 
 button,
