@@ -13,7 +13,6 @@ function setTable(table,array)
             map.set(value,map.get(value)+1);
         else map.set(value,1);
     });
-    console.info(map);
     Array.from(map).sort((a,b)=>{
         if(a[1] < b[1]) return 1;
         if(a[1] > b[1]) return -1;

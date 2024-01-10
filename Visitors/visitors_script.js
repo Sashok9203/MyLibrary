@@ -47,10 +47,9 @@ function saveVisitor()
 
 function checkUserInput()
 {
-   return($nameInput.val() 
+  return($nameInput.val() 
           && $phoneInput.val()
-          && $phoneInput.val().length <= 13
-          && $phoneInput.val().match(/^[0-9]{3}[-\s]{0,1}[0-9]{3}[-\s]{0,1}[0-9]{2,4}[-\s]{0,1}[0-9]{2,4}$/im))
+          && (/^\d{3}[-\s]{1}\d{3}[-\s]{1}\d{2}[-\s]{0,1}\d{2}[-\s]{0,1}$/gm).test($phoneInput.val()))
 }
 
 function setDataToTable(filter,sort)
