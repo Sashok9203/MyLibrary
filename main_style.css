@@ -199,6 +199,14 @@ th,td{
  .return,
  .edit-window img{
     height: 16px;
+    transition: transform .5s;
+}
+
+.edit:hover,
+.remove:hover,
+.return:hover,
+.edit-window img:hover{
+    transform: rotate(90deg);
 }
                                                        
 thead {
