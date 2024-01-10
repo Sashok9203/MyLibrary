@@ -1,10 +1,11 @@
 # Book Library
 
-![Screenshot_1](https://github.com/Sashok9203/MyLibrary/assets/56803757/659a4438-f6da-49cf-a98b-dae375643e98)
+![image](https://github.com/Sashok9203/MyLibrary/assets/56803757/0f5c512c-0607-425d-9a33-c09c1c166d53)
 
-![Screenshot_2](https://github.com/Sashok9203/MyLibrary/assets/56803757/b73f01b7-40fa-446b-9432-41fe7fbb40bb)
+![image](https://github.com/Sashok9203/MyLibrary/assets/56803757/521a3101-aae8-44af-8d10-069b6ea5e732)
 
-![Screenshot_3](https://github.com/Sashok9203/MyLibrary/assets/56803757/32d3f9e1-b7a6-4765-b6f0-71b6ee8ae112)
+![image](https://github.com/Sashok9203/MyLibrary/assets/56803757/433a7a19-22b6-47e1-991f-6e412beae560)
 
-![Screenshot_4](https://github.com/Sashok9203/MyLibrary/assets/56803757/21ed9c20-03a6-4050-9244-31486e139fc4)
+![image](https://github.com/Sashok9203/MyLibrary/assets/56803757/96ee1064-51d4-4796-bbd6-144271082b63)
+
 
