@@ -76,6 +76,15 @@ class Card{
     }
 }
 
+function sortFunct(sort)
+{   
+    let lessCondition = new Function('a','b',`return a.${sort} < b.${sort}`);
+    let moreCondition = new Function('a','b',`return a.${sort} > b.${sort}`);;
+    return (a,b)=>{if(moreCondition(a,b)) return 1; 
+                  if (lessCondition(a,b)) return -1;
+                  return 0;
+    };
+}
 
 function initData()
 {
@@ -135,4 +144,4 @@ function closeWindow()
 
 initData();
 
-export {closeWindow,openWindow,getData,setData,Book,getId,Card,Visitor,$sortValue,$newButton,$sort_button,$search_button,$searchValue,$table};
+export {sortFunct,closeWindow,openWindow,getData,setData,Book,getId,Card,Visitor,$sortValue,$newButton,$sort_button,$search_button,$searchValue,$table};

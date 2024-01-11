@@ -1,4 +1,4 @@
-import {closeWindow,openWindow,$table,getData,setData,Book,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue} from "../common.js";
+import {sortFunct,closeWindow,openWindow,$table,getData,setData,Book,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue} from "../common.js";
 
 let Books = getData("books");
 let Cards = getData("cards");
@@ -78,47 +78,8 @@ function setDataToTable(filter,sort)
     }
     else
        tempBookArray = Books;
-
-    if(sort){
-       let lessCondition,moreCondition;
-       switch(sort)
-        {
-             case 'id':
-                 lessCondition = (a,b) =>a.id < b.id;
-                 moreCondition = (a,b) =>a.id > b.id;
-                 break;
-             case 'name':
-                 lessCondition = (a,b) =>a.name < b.name;
-                 moreCondition = (a,b) =>a.name > b.name;
-                 break;
-             case 'author':
-                 lessCondition = (a,b) =>a.author < b.author;
-                 moreCondition = (a,b) =>a.author > b.author;
-                 break;
-             case 'year':
-                 lessCondition = (a,b) =>a.year < b.year;
-                 moreCondition = (a,b) =>a.year > b.year;
-                 break; 
-             case 'publishing':
-                 lessCondition = (a,b) =>a.publishing < b.publishing;
-                 moreCondition = (a,b) =>a.publishing > b.publishing;
-                 break;
-             case 'pages':
-                 lessCondition = (a,b) =>a.pagesCount < b.pagesCount;
-                 moreCondition = (a,b) =>a.pagesCount > b.pagesCount;
-                 break; 
-             case 'count':
-                 lessCondition = (a,b) =>a.booksCount < b.booksCount;
-                 moreCondition = (a,b) =>a.booksCount > b.booksCount;
-                 break;     
-
-        }
-        tempBookArray.sort((a,b)=>{
-            if(moreCondition(a,b)) return 1;
-            if (lessCondition(a,b)) return -1;
-         return 0;
-        });
-     }
+    if(sort)
+        tempBookArray.sort(sortFunct(sort));
     $table.empty();
     tempBookArray.forEach(element => {
         $table.append(`

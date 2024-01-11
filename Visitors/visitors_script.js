@@ -1,4 +1,4 @@
-import {closeWindow,openWindow,$table,getData,setData,Visitor,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue} from "../common.js";
+import {sortFunct,closeWindow,openWindow,$table,getData,setData,Visitor,getId,$sortValue,$newButton,$sort_button,$search_button,$searchValue} from "../common.js";
 
 let Visitors = getData("visitors");
 let editableVisitor = null;
@@ -60,30 +60,8 @@ function setDataToTable(filter,sort)
     }
     else
        tempVisitorsArray = Visitors;
-
-    if(sort){
-       let lessCondition,moreCondition;
-       switch(sort)
-        {
-             case 'id':
-                 lessCondition = (a,b) =>a.id < b.id;
-                 moreCondition = (a,b) =>a.id > b.id;
-                 break;
-             case 'name':
-                 lessCondition = (a,b) =>a.name < b.name;
-                 moreCondition = (a,b) =>a.name > b.name;
-                 break;
-             case 'telephone':
-                 lessCondition = (a,b) =>a.telephone < b.telephone;
-                 moreCondition = (a,b) =>a.telephone > b.telephone;
-                 break;
-        }
-        tempVisitorsArray.sort((a,b)=>{
-            if(moreCondition(a,b)) return 1;
-            if(lessCondition(a,b)) return -1;
-         return 0;
-        });
-     }
+    if(sort)       
+        tempVisitorsArray.sort(sortFunct(sort));
     $table.empty();
     tempVisitorsArray.forEach(element => {
         $table.append(`
