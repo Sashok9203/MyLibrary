@@ -61,7 +61,7 @@ function checkUserInput()
    return($nameInput.val() 
           && $authorInput.val() 
           && $yearInput.val() 
-          && $yearInput.val() > 1750
+          && $yearInput.val() > 0
           && $publishingInput.val()
           && $pagesInput.val()
           && $pagesInput.val() > 0
