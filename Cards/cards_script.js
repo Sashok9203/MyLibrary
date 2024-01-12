@@ -122,15 +122,15 @@ async function setDataToTable(filter, sort) {
     $('.return').click(returnBook);
 }
 
-function returnBook(event) {
+async  function returnBook(event) {
     if (!confirm(`Are you sure ?`)) return;
     let element = Cards.find((item) => item.id == event.target.id);
     let returnedBook = Books.find((item) => item.id == element.bookId);
     returnedBook.booksCount++;
     element.return_date = new Date(Date.now()).toISOString().split('T')[0];
-    setDataToTable();
     setData("cards", Cards);
     setData("books", Books);
+    await setDataToTable();
 }
 
 function newCard() {
