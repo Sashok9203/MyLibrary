@@ -57,50 +57,56 @@ function checkUserInput() {
     return ($bookCB.val() && $visitorCB.val())
 }
 
-function setDataToTable(filter, sort) {
-    let tempCardsArray;
-    if (filter) {
-        filter = filter.toLowerCase();
-        tempCardsArray = Cards.filter((item) => (Books.find((x) => x.id == item.bookId).name.toLowerCase().includes(filter) ||
-            Visitors.find((x) => x.id == item.visitorId).name.toLowerCase().includes(filter) ||
-            item.borrow_date.includes(filter) ||
-            (item.return_date && item.return_date.includes(filter))));
-    }
-    else
-        tempCardsArray = Cards;
-
-    if (sort) {
-        let lessCondition, moreCondition;
-        switch (sort) {
-            case 'id':
-                lessCondition = (a, b) => a.id < b.id;
-                moreCondition = (a, b) => a.id > b.id;
-                break;
-            case 'visitor':
-                lessCondition = (a, b) => Visitors.find((item) => item.id == a.visitorId).name < Visitors.find((item) => item.id == b.visitorId).name;
-                moreCondition = (a, b) => Visitors.find((item) => item.id == a.visitorId).name > Visitors.find((item) => item.id == b.visitorId).name;
-                break;
-            case 'book':
-                lessCondition = (a, b) => Books.find((item) => item.id == a.bookId).name < Books.find((item) => item.id == b.bookId).name;
-                moreCondition = (a, b) => Books.find((item) => item.id == a.bookId).name > Books.find((item) => item.id == b.bookId).name;;
-                break;
-            case 'borrow_date':
-                lessCondition = (a, b) => a.borrow_date < b.borrow_date;
-                moreCondition = (a, b) => a.borrow_date > b.borrow_date;
-                break;
-            case 'return_date':
-                lessCondition = (a, b) => (a.return_date && !b.return_date) || (a.return_date < b.return_date);
-                moreCondition = (a, b) => (!a.return_date && b.return_date) || (a.return_date > b.return_date);
-                break;
+async function setCardArray(filter,sort) {
+    return new Promise((res) => {
+        let tempCardsArray;
+        if (filter) {
+            filter = filter.toLowerCase();
+            tempCardsArray = Cards.filter((item) => (Books.find((x) => x.id == item.bookId).name.toLowerCase().includes(filter) ||
+                Visitors.find((x) => x.id == item.visitorId).name.toLowerCase().includes(filter) ||
+                item.borrow_date.includes(filter) ||
+                (item.return_date && item.return_date.includes(filter))));
         }
-        tempCardsArray.sort((a, b) => {
-            if (moreCondition(a, b)) return 1;
-            if (lessCondition(a, b)) return -1;
-            return 0;
-        });
-    }
+        else
+            tempCardsArray = Cards;
+
+        if (sort) {
+            let lessCondition, moreCondition;
+            switch (sort) {
+                case 'id':
+                    lessCondition = (a, b) => a.id < b.id;
+                    moreCondition = (a, b) => a.id > b.id;
+                    break;
+                case 'visitor':
+                    lessCondition = (a, b) => Visitors.find((item) => item.id == a.visitorId).name < Visitors.find((item) => item.id == b.visitorId).name;
+                    moreCondition = (a, b) => Visitors.find((item) => item.id == a.visitorId).name > Visitors.find((item) => item.id == b.visitorId).name;
+                    break;
+                case 'book':
+                    lessCondition = (a, b) => Books.find((item) => item.id == a.bookId).name < Books.find((item) => item.id == b.bookId).name;
+                    moreCondition = (a, b) => Books.find((item) => item.id == a.bookId).name > Books.find((item) => item.id == b.bookId).name;;
+                    break;
+                case 'borrow_date':
+                    lessCondition = (a, b) => a.borrow_date < b.borrow_date;
+                    moreCondition = (a, b) => a.borrow_date > b.borrow_date;
+                    break;
+                case 'return_date':
+                    lessCondition = (a, b) => (a.return_date && !b.return_date) || (a.return_date < b.return_date);
+                    moreCondition = (a, b) => (!a.return_date && b.return_date) || (a.return_date > b.return_date);
+                    break;
+            }
+            tempCardsArray.sort((a, b) => {
+                if (moreCondition(a, b)) return 1;
+                if (lessCondition(a, b)) return -1;
+                return 0;
+            });
+        }
+        res(tempCardsArray);
+    });
+}
+
+async function setDataToTable(filter, sort) {
     $table.empty();
-    tempCardsArray.forEach(element => {
+    (await setCardArray(filter, sort)).forEach(element => {
         let returnElement = element.return_date ?
             `<td>${element.return_date}</td>` :
             `<td><img id = "${element.id}" class = "return" src = "../Images/return.png"></td>`;
